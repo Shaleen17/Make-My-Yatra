@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Primary Palette — Warm Saffron/Spiritual */
+  --primary: #c0392b;
+  --primary-light: #e74c3c;
+  --primary-dark: #962d22;
+  --saffron: #ff6b35;
+  --saffron-light: #ff8c5a;
+  --saffron-glow: rgba(255, 107, 53, 0.15);
+
+  /* Gold & Accent */
+  --gold: #d4a847;
+  --gold-light: #e8c875;
+  --gold-dark: #b8922e;
+
+  /* Backgrounds */
+  --bg-main: #faf7f2;
+  --bg-surface: #ffffff;
+  --bg-elevated: #fff8f0;
+  --bg-section: #f5f0e8;
+  --bg-dark: #1a0f08;
+  --bg-dark-warm: #2c1810;
+
+  /* Text */
+  --text-primary: #2c1810;
+  --text-secondary: #6b5b4f;
+  --text-tertiary: #9e8e82;
+  --text-on-dark: #f5efe8;
+  --text-on-primary: #ffffff;
+
+  /* Borders & Shadows */
+  --border: #e8e0d8;
+  --border-light: #f0ebe5;
+  --shadow-sm: 0 1px 3px rgba(44, 24, 16, 0.06);
+  --shadow-md: 0 4px 12px rgba(44, 24, 16, 0.08);
+  --shadow-lg: 0 8px 30px rgba(44, 24, 16, 0.12);
+  --shadow-xl: 0 16px 50px rgba(44, 24, 16, 0.15);
+  --shadow-glow: 0 0 20px rgba(212, 168, 71, 0.2);
+
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, rgba(26, 10, 0, 0.7) 0%, rgba(61, 31, 0, 0.5) 50%, rgba(107, 58, 26, 0.3) 100%);
+  --gradient-saffron: linear-gradient(135deg, #ff6b35 0%, #c0392b 100%);
+  --gradient-gold: linear-gradient(135deg, #d4a847 0%, #b8922e 100%);
+  --gradient-warm: linear-gradient(135deg, #faf7f2 0%, #f5efe8 100%);
+  --gradient-dark: linear-gradient(135deg, #1a0f08 0%, #2c1810 100%);
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --transition-fast: 150ms var(--ease-out);
+  --transition-base: 250ms var(--ease-out);
+  --transition-slow: 400ms var(--ease-out);
+
+  /* Typography */
+  --font-primary: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-devanagari: 'Noto Sans Devanagari', sans-serif;
+
+  /* Container */
+  --max-width: 1200px;
+  --header-height: 70px;
+}
+
+/* ==================== GLOBAL RESETS ==================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input, select, textarea {
+  font-family: var(--font-primary);
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.section-subtitle {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-saffron);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-lg);
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(212, 168, 71, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(212, 168, 71, 0.6); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s var(--ease-out) both;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s var(--ease-out) both;
+}
+
+/* Staggered children */
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 80ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 160ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 240ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 320ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 400ms; }
+.stagger-children > *:nth-child(7) { animation-delay: 480ms; }
+.stagger-children > *:nth-child(8) { animation-delay: 560ms; }
+
+/* ==================== SCROLLBAR ==================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-section);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-tertiary);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+  .section-title {
+    font-size: 22px;
+  }
+  .desktop-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* ==================== ENHANCED MOBILE ==================== */
+@media (max-width: 768px) {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: contain;
+  }
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* ==================== TOUCH TARGETS ==================== */
+@media (pointer: coarse) {
+  button, a, select, input {
+    min-height: 44px;
+  }
+}
+
+/* ==================== REDUCED MOTION ==================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==================== FOCUS VISIBLE ==================== */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ==================== HARDWARE ACCELERATION ==================== */
+.gpu {
+  will-change: transform;
+  transform: translateZ(0);
+}

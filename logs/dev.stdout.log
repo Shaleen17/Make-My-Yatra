@@ -1,0 +1,259 @@
+
+> tirth-yatra@1.0.0 dev
+> concurrently "npm run client" "npm run server:dev"
+
+[1] 
+[1] > tirth-yatra@1.0.0 server:dev
+[1] > node --watch server/index.js
+[1] 
+[0] 
+[0] > tirth-yatra@1.0.0 client
+[0] > react-scripts start
+[0] 
+[1] Restarting 'server/index.js'
+[1] Restarting 'server/index.js'
+[1] Restarting 'server/index.js'
+[1] Restarting 'server/index.js'
+[0] (node:6056) [DEP_WEBPACK_DEV_SERVER_ON_AFTER_SETUP_MIDDLEWARE] DeprecationWarning: 'onAfterSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[0] (Use `node --trace-deprecation ...` to show where the warning was created)
+[0] (node:6056) [DEP_WEBPACK_DEV_SERVER_ON_BEFORE_SETUP_MIDDLEWARE] DeprecationWarning: 'onBeforeSetupMiddleware' option is deprecated. Please use the 'setupMiddlewares' option.
+[1] Restarting 'server/index.js'
+[0] Starting the development server...
+[0] 
+[1] Restarting 'server/index.js'
+[1] Restarting 'server/index.js'
+[0] Compiled with warnings.
+[0] 
+[0] [eslint] 
+[0] src\auth.js
+[0]   Line 38:1:  Assign instance to a variable before exporting as module default  import/no-anonymous-default-export
+[0] 
+[0] src\components\DharamshalaPage\AllDharamshalas.jsx
+[0]   Line 366:9:  'totalPlaces' is assigned a value but never used  no-unused-vars
+[0] 
+[0] src\components\login\loginpanel\LoginForm.jsx
+[0]   Line 299:11:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+[0]   Line 299:43:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+[0]   Line 300:11:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+[0] 
+[0] src\components\login\loginpanel\LoginPanel.jsx
+[0]   Line 102:20:  'setFindUser' is assigned a value but never used  no-unused-vars
+[0] 
+[0] Search for the keywords to learn more about each warning.
+[0] To ignore, add // eslint-disable-next-line to the line before.
+[0] 
+[0] [1m[33mWARNING[39m[22m in [1m[eslint] 
+[0] src\auth.js
+[0]   Line 38:1:  Assign instance to a variable before exporting as module default  import/no-anonymous-default-export
+[0] 
+[0] src\components\DharamshalaPage\AllDharamshalas.jsx
+[0]   Line 366:9:  'totalPlaces' is assigned a value but never used  no-unused-vars
+[0] 
+[0] src\components\login\loginpanel\LoginForm.jsx
+[0]   Line 299:11:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+[0]   Line 299:43:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+[0]   Line 300:11:  The href attribute requires a valid value to be accessible. Provide a valid, navigable address as the href value. If you cannot provide a valid href, but still need the element to resemble a link, use a button and change it with appropriate styles. Learn more: https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/HEAD/docs/rules/anchor-is-valid.md  jsx-a11y/anchor-is-valid
+[0] 
+[0] src\components\login\loginpanel\LoginPanel.jsx
+[0]   Line 102:20:  'setFindUser' is assigned a value but never used  no-unused-vars
+[0] 
+[0] [39m[22m
+[0] 
+[0] webpack compiled with [1m[33m1 warning[39m[22m
+[1] C:\Users\User\Desktop\Make My Darshan\node_modules\mongoose\lib\connection.js:825
+[1]   const serverSelectionError = new ServerSelectionError();
+[1]                                ^
+[1] 
+[1] MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[1]     at Connection.openUri (C:\Users\User\Desktop\Make My Darshan\node_modules\mongoose\lib\connection.js:825:32)
+[1]     at C:\Users\User\Desktop\Make My Darshan\node_modules\mongoose\lib\index.js:414:10
+[1]     at C:\Users\User\Desktop\Make My Darshan\node_modules\mongoose\lib\helpers\promiseOrCallback.js:41:5
+[1]     at new Promise (<anonymous>)
+[1]     at promiseOrCallback (C:\Users\User\Desktop\Make My Darshan\node_modules\mongoose\lib\helpers\promiseOrCallback.js:40:10)
+[1]     at Mongoose._promiseOrCallback (C:\Users\User\Desktop\Make My Darshan\node_modules\mongoose\lib\index.js:1290:10)
+[1]     at Mongoose.connect (C:\Users\User\Desktop\Make My Darshan\node_modules\mongoose\lib\index.js:413:20)
+[1]     at connect (C:\Users\User\Desktop\Make My Darshan\server\config\db.js:11:19)
+[1]     at start (C:\Users\User\Desktop\Make My Darshan\server\server.js:54:9)
+[1]     at Object.<anonymous> (C:\Users\User\Desktop\Make My Darshan\server\index.js:3:1) {
+[1]   reason: TopologyDescription {
+[1]     type: 'ReplicaSetNoPrimary',
+[1]     servers: Map(3) {
+[1]       'ac-1jbwdep-shard-00-00.ud1fjry.mongodb.net:27017' => ServerDescription {
+[1]         address: 'ac-1jbwdep-shard-00-00.ud1fjry.mongodb.net:27017',
+[1]         type: 'Unknown',
+[1]         hosts: [],
+[1]         passives: [],
+[1]         arbiters: [],
+[1]         tags: {},
+[1]         minWireVersion: 0,
+[1]         maxWireVersion: 0,
+[1]         roundTripTime: -1,
+[1]         lastUpdateTime: 18537595,
+[1]         lastWriteDate: 0,
+[1]         error: MongoNetworkError: C43A0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:918:SSL alert number 80
+[1]         
+[1]             at connectionFailureError (C:\Users\User\Desktop\Make My Darshan\node_modules\mongodb\lib\cmap\connect.js:387:20)
+[1]             at TLSSocket.<anonymous> (C:\Users\User\Desktop\Make My Darshan\node_modules\mongodb\lib\cmap\connect.js:310:22)
+[1]             at Object.onceWrapper (node:events:631:12)
+[1]             at TLSSocket.emit (node:events:509:20)
+[1]             at emitErrorNT (node:internal/streams/destroy:170:8)
+[1]             at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+[1]             at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+[1]           cause: [Error: C43A0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:918:SSL alert number 80
+[1]           ] {
+[1]             library: 'SSL routines',
+[1]             reason: 'tlsv1 alert internal error',
+[1]             code: 'ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR'
+[1]           },
+[1]           Symbol(errorLabels): Set(1) { 'ResetPool' }
+[1]         },
+[1]         topologyVersion: null,
+[1]         setName: null,
+[1]         setVersion: null,
+[1]         electionId: null,
+[1]         logicalSessionTimeoutMinutes: null,
+[1]         primary: null,
+[1]         me: null,
+[1]         '$clusterTime': null
+[1]       },
+[1]       'ac-1jbwdep-shard-00-01.ud1fjry.mongodb.net:27017' => ServerDescription {
+[1]         address: 'ac-1jbwdep-shard-00-01.ud1fjry.mongodb.net:27017',
+[1]         type: 'Unknown',
+[1]         hosts: [],
+[1]         passives: [],
+[1]         arbiters: [],
+[1]         tags: {},
+[1]         minWireVersion: 0,
+[1]         maxWireVersion: 0,
+[1]         roundTripTime: -1,
+[1]         lastUpdateTime: 18537592,
+[1]         lastWriteDate: 0,
+[1]         error: MongoNetworkError: C43A0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:918:SSL alert number 80
+[1]         
+[1]             at connectionFailureError (C:\Users\User\Desktop\Make My Darshan\node_modules\mongodb\lib\cmap\connect.js:387:20)
+[1]             at TLSSocket.<anonymous> (C:\Users\User\Desktop\Make My Darshan\node_modules\mongodb\lib\cmap\connect.js:310:22)
+[1]             at Object.onceWrapper (node:events:631:12)
+[1]             at TLSSocket.emit (node:events:509:20)
+[1]             at emitErrorNT (node:internal/streams/destroy:170:8)
+[1]             at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+[1]             at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+[1]           cause: [Error: C43A0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:918:SSL alert number 80
+[1]           ] {
+[1]             library: 'SSL routines',
+[1]             reason: 'tlsv1 alert internal error',
+[1]             code: 'ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR'
+[1]           },
+[1]           Symbol(errorLabels): Set(1) { 'ResetPool' }
+[1]         },
+[1]         topologyVersion: null,
+[1]         setName: null,
+[1]         setVersion: null,
+[1]         electionId: null,
+[1]         logicalSessionTimeoutMinutes: null,
+[1]         primary: null,
+[1]         me: null,
+[1]         '$clusterTime': null
+[1]       },
+[1]       'ac-1jbwdep-shard-00-02.ud1fjry.mongodb.net:27017' => ServerDescription {
+[1]         address: 'ac-1jbwdep-shard-00-02.ud1fjry.mongodb.net:27017',
+[1]         type: 'Unknown',
+[1]         hosts: [],
+[1]         passives: [],
+[1]         arbiters: [],
+[1]         tags: {},
+[1]         minWireVersion: 0,
+[1]         maxWireVersion: 0,
+[1]         roundTripTime: -1,
+[1]         lastUpdateTime: 18537860,
+[1]         lastWriteDate: 0,
+[1]         error: MongoNetworkError: C43A0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:918:SSL alert number 80
+[1]         
+[1]             at connectionFailureError (C:\Users\User\Desktop\Make My Darshan\node_modules\mongodb\lib\cmap\connect.js:387:20)
+[1]             at TLSSocket.<anonymous> (C:\Users\User\Desktop\Make My Darshan\node_modules\mongodb\lib\cmap\connect.js:310:22)
+[1]             at Object.onceWrapper (node:events:631:12)
+[1]             at TLSSocket.emit (node:events:509:20)
+[1]             at emitErrorNT (node:internal/streams/destroy:170:8)
+[1]             at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+[1]             at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+[1]           cause: [Error: C43A0000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:openssl\ssl\record\rec_layer_s3.c:918:SSL alert number 80
+[1]           ] {
+[1]             library: 'SSL routines',
+[1]             reason: 'tlsv1 alert internal error',
+[1]             code: 'ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR'
+[1]           },
+[1]           Symbol(errorLabels): Set(1) { 'ResetPool' }
+[1]         },
+[1]         topologyVersion: null,
+[1]         setName: null,
+[1]         setVersion: null,
+[1]         electionId: null,
+[1]         logicalSessionTimeoutMinutes: null,
+[1]         primary: null,
+[1]         me: null,
+[1]         '$clusterTime': null
+[1]       }
+[1]     },
+[1]     stale: false,
+[1]     compatible: true,
+[1]     heartbeatFrequencyMS: 10000,
+[1]     localThresholdMS: 15,
+[1]     setName: 'atlas-n1r4vi-shard-0',
+[1]     maxElectionId: null,
+[1]     maxSetVersion: null,
+[1]     commonWireVersion: 0,
+[1]     logicalSessionTimeoutMinutes: null
+[1]   },
+[1]   code: undefined
+[1] }
+[1] 
+[1] Node.js v26.1.0
+[1] Failed running 'server/index.js'. Waiting for file changes before restarting...
+[1] Restarting 'server/index.js'
+[1] Restarting 'server/index.js'
+[1] {"level":30,"time":1779457585897,"service":"make-my-yatra-api","environment":"development","msg":"background jobs disabled"}
+[1] node:events:487
+[1]       throw er; // Unhandled 'error' event
+[1]       ^
+[1] 
+[1] Error: listen EADDRINUSE: address already in use :::2345
+[1]     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+[1]     at listenInCluster (node:net:2065:12)
+[1]     at Server.listen (node:net:2170:7)
+[1]     at start (C:\Users\User\Desktop\Make My Darshan\server\server.js:65:14)
+[1]     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[1] Emitted 'error' event on Server instance at:
+[1]     at emitErrorNT (node:net:2044:8)
+[1]     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+[1]   code: 'EADDRINUSE',
+[1]   errno: -4091,
+[1]   syscall: 'listen',
+[1]   address: '::',
+[1]   port: 2345
+[1] }
+[1] 
+[1] Node.js v26.1.0
+[1] Failed running 'server/index.js'. Waiting for file changes before restarting...
+[1] Restarting 'server/index.js'
+[1] {"level":30,"time":1779457588318,"service":"make-my-yatra-api","environment":"development","msg":"background jobs disabled"}
+[1] node:events:487
+[1]       throw er; // Unhandled 'error' event
+[1]       ^
+[1] 
+[1] Error: listen EADDRINUSE: address already in use :::2345
+[1]     at Server.setupListenHandle [as _listen2] (node:net:2008:16)
+[1]     at listenInCluster (node:net:2065:12)
+[1]     at Server.listen (node:net:2170:7)
+[1]     at start (C:\Users\User\Desktop\Make My Darshan\server\server.js:65:14)
+[1]     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+[1] Emitted 'error' event on Server instance at:
+[1]     at emitErrorNT (node:net:2044:8)
+[1]     at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+[1]   code: 'EADDRINUSE',
+[1]   errno: -4091,
+[1]   syscall: 'listen',
+[1]   address: '::',
+[1]   port: 2345
+[1] }
+[1] 
+[1] Node.js v26.1.0
+[1] Failed running 'server/index.js'. Waiting for file changes before restarting...
