@@ -9,6 +9,7 @@ import { AllDharamshalas } from "./components/DharamshalaPage/AllDharamshalas";
 import { AllTirthYatras } from "./components/HomePage/AllTirthYatras";
 import { ReelsPage } from "./components/HomePage/ReelsPage";
 import { DevoteeProfilesPage } from "./components/HomePage/DevoteeProfilesPage";
+import { LoginPage } from "./components/login/LoginPage";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/reels" element={<ReelsPage />} />
         <Route path="/devotee-profiles" element={<DevoteeProfilesPage />} />
         <Route path="/devotee-profiles/:handle" element={<DevoteeProfilesPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/checkout" exact element={<Mytrip />} />
         <Route path="/final" exact element={<Final />} />
         <Route path="/payment" exact element={<Payment />} />

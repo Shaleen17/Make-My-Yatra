@@ -296,6 +296,7 @@ const Page = styled.div`
     background:
       linear-gradient(180deg, rgba(255, 248, 240, 0.94), rgba(250, 247, 242, 1) 34%),
       #faf7f2;
+    overflow-x: hidden;
   }
 
   .mobile-profile-bar {
@@ -350,34 +351,36 @@ const Page = styled.div`
   .profile-shell {
     margin: 0 auto;
     max-width: 1380px;
+    overflow-x: hidden;
     width: 100%;
   }
 
   .profile-head {
     display: grid;
-    gap: 16px;
-    grid-template-columns: 96px minmax(0, 1fr);
-    padding: 22px 16px 16px;
+    gap: 10px;
+    grid-template-columns: 88px minmax(0, 1fr);
+    max-width: 100%;
+    padding: 22px 12px 16px;
+    width: 100%;
   }
 
   .profile-avatar-ring {
     align-self: start;
-    height: 94px;
+    height: 88px;
     padding: 3px;
-    width: 94px;
+    width: 88px;
   }
 
   .profile-avatar {
     background: #ffffff;
     border: 4px solid #ffffff;
     border-radius: 50%;
-    height: 88px;
+    height: 82px;
     object-fit: cover;
-    width: 88px;
+    width: 82px;
   }
 
   .desktop-handle,
-  .profile-name-row,
   .desktop-profile-actions {
     display: none;
   }
@@ -385,10 +388,12 @@ const Page = styled.div`
   .mobile-stats {
     align-items: center;
     display: grid;
-    gap: 8px;
+    gap: 0;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 100%;
     min-width: 0;
     padding-top: 8px;
+    width: 100%;
   }
 
   .stat {
@@ -399,7 +404,7 @@ const Page = styled.div`
 
   .stat strong {
     display: block;
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 900;
     line-height: 1.05;
   }
@@ -407,7 +412,7 @@ const Page = styled.div`
   .stat span {
     color: var(--text-secondary, #6b5b4f);
     display: block;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     line-height: 1.18;
     margin-top: 3px;
@@ -415,6 +420,15 @@ const Page = styled.div`
 
   .profile-copy {
     grid-column: 1 / -1;
+    min-width: 0;
+  }
+
+  .profile-name-row {
+    align-items: center;
+    display: flex;
+    gap: 6px;
+    margin-bottom: 5px;
+    min-width: 0;
   }
 
   .profile-name {
@@ -459,6 +473,7 @@ const Page = styled.div`
   }
 
   .profile-link-row span {
+    min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -494,8 +509,10 @@ const Page = styled.div`
   .profile-actions {
     display: grid;
     gap: 6px;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 48px;
-    padding: 0 16px 18px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 42px;
+    max-width: 100%;
+    padding: 0 12px 18px;
+    width: 100%;
   }
 
   .profile-action {
@@ -726,30 +743,62 @@ const Page = styled.div`
     display: none;
   }
 
+  .desktop-profile-back {
+    display: none;
+  }
+
+  .desktop-directory-back {
+    display: none;
+  }
+
   @media (min-width: 769px) {
     background:
       linear-gradient(180deg, rgba(250, 247, 242, 0.96), rgba(245, 240, 232, 0.98)),
       var(--bg-section, #f5f0e8);
-    padding: 0 30px 34px;
+    padding: 0 22px 26px;
 
     .directory-screen {
       background: #ffffff;
       border-left: 1px solid var(--border, #e8e0d8);
       border-right: 1px solid var(--border, #e8e0d8);
-      box-shadow: 0 18px 60px rgba(44, 24, 16, 0.08);
+      box-shadow: 0 14px 44px rgba(44, 24, 16, 0.07);
       margin: 0 auto;
-      max-width: 1360px;
+      max-width: 980px;
       min-height: 100vh;
       padding-bottom: 0;
       width: 100%;
     }
 
     .directory-top {
+      align-items: center;
       background: #ffffff;
       border-bottom: 1px solid var(--border, #e8e0d8);
-      padding: 24px 28px 18px;
+      display: grid;
+      gap: 12px;
+      grid-template-columns: auto minmax(0, 1fr);
+      padding: 14px 18px 12px;
       position: sticky;
       top: 0;
+    }
+
+    .desktop-directory-back {
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid var(--border, #e8e0d8);
+      border-radius: 999px;
+      color: var(--text-primary, #2c1810);
+      display: inline-flex;
+      font-size: 14px;
+      font-weight: 800;
+      gap: 8px;
+      height: 40px;
+      min-height: 40px;
+      padding: 0 15px;
+      box-shadow: 0 8px 20px rgba(44, 24, 16, 0.07);
+    }
+
+    .desktop-directory-back svg {
+      font-size: 16px;
     }
 
     .page-header {
@@ -762,20 +811,20 @@ const Page = styled.div`
 
     .search-box {
       background: var(--bg-section, #f5f0e8);
-      border: 2px solid #ded2c3;
+      border: 1px solid #ded2c3;
       box-shadow: none;
-      height: 76px;
-      padding: 0 26px;
+      height: 48px;
+      padding: 0 16px;
     }
 
     .search-box svg {
       color: #9f766a;
-      font-size: 34px;
+      font-size: 21px;
     }
 
     .search-box input {
       color: #5a332b;
-      font-size: 28px;
+      font-size: 17px;
       font-weight: 500;
     }
 
@@ -783,8 +832,8 @@ const Page = styled.div`
       background: #fbf6ef;
       border-bottom: 1px solid var(--border, #e8e0d8);
       color: #9f766a;
-      font-size: 24px;
-      padding: 20px 32px;
+      font-size: 14px;
+      padding: 11px 20px;
     }
 
     .result-row strong {
@@ -793,9 +842,9 @@ const Page = styled.div`
       border-radius: 999px;
       color: var(--text-primary, #2c1810);
       display: inline-flex;
-      font-size: 24px;
-      gap: 10px;
-      padding: 10px 22px;
+      font-size: 15px;
+      gap: 7px;
+      padding: 6px 13px;
     }
 
     .result-row strong::before {
@@ -805,13 +854,13 @@ const Page = styled.div`
       color: #ffffff;
       content: "OK";
       display: inline-flex;
-      font-size: 10px;
+      font-size: 8px;
       font-weight: 900;
-      height: 28px;
+      height: 20px;
       justify-content: center;
       letter-spacing: 0;
       line-height: 1;
-      width: 28px;
+      width: 20px;
     }
 
     .sant-list {
@@ -825,9 +874,9 @@ const Page = styled.div`
       border-bottom: 1px solid var(--border, #e8e0d8);
       border-radius: 0;
       box-shadow: none;
-      grid-template-columns: 116px minmax(0, 1fr) 180px;
-      min-height: 172px;
-      padding: 28px 32px;
+      grid-template-columns: 68px minmax(0, 1fr) 104px;
+      min-height: 88px;
+      padding: 12px 20px;
     }
 
     .sant-item:nth-child(odd) {
@@ -835,15 +884,15 @@ const Page = styled.div`
     }
 
     .avatar-ring {
-      height: 92px;
-      padding: 4px;
-      width: 92px;
+      height: 56px;
+      padding: 2px;
+      width: 56px;
     }
 
     .sant-avatar {
-      border-width: 4px;
-      height: 84px;
-      width: 84px;
+      border-width: 2px;
+      height: 52px;
+      width: 52px;
     }
 
     .sant-info {
@@ -859,25 +908,25 @@ const Page = styled.div`
     }
 
     .sant-name-row {
-      gap: 10px;
-      margin-bottom: 10px;
+      gap: 6px;
+      margin-bottom: 4px;
     }
 
     .sant-handle {
       color: #111111;
-      font-size: 28px;
+      font-size: 18px;
       font-weight: 800;
       line-height: 1.18;
       white-space: normal;
     }
 
     .sant-name-row svg {
-      font-size: 24px;
+      font-size: 17px;
     }
 
     .sant-title {
       color: #9f766a;
-      font-size: 24px;
+      font-size: 14px;
       font-weight: 500;
       line-height: 1.28;
       margin-top: 0;
@@ -886,23 +935,23 @@ const Page = styled.div`
 
     .sant-meta {
       color: #5a332b;
-      font-size: 22px;
+      font-size: 13px;
       font-weight: 600;
-      margin-top: 8px;
+      margin-top: 3px;
       white-space: normal;
     }
 
     .follow-btn {
       align-self: center;
       background: #542f28;
-      border-radius: 14px;
+      border-radius: 9px;
       box-shadow: none;
-      font-size: 24px;
-      height: 58px;
+      font-size: 14px;
+      height: 36px;
       justify-self: end;
-      min-height: 58px;
-      min-width: 142px;
-      padding: 0 26px;
+      min-height: 36px;
+      min-width: 84px;
+      padding: 0 14px;
     }
 
     .follow-btn.following {
@@ -924,6 +973,31 @@ const Page = styled.div`
       min-height: 100vh;
       max-width: 1460px;
       box-shadow: 0 18px 70px rgba(44, 24, 16, 0.08);
+      position: relative;
+    }
+
+    .desktop-profile-back {
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid var(--border, #e8e0d8);
+      border-radius: 999px;
+      color: var(--text-primary, #2c1810);
+      display: inline-flex;
+      font-size: 14px;
+      font-weight: 800;
+      gap: 8px;
+      height: 40px;
+      left: 22px;
+      min-height: 40px;
+      padding: 0 15px;
+      position: absolute;
+      top: 22px;
+      z-index: 32;
+      box-shadow: 0 10px 24px rgba(44, 24, 16, 0.08);
+    }
+
+    .desktop-profile-back svg {
+      font-size: 16px;
     }
 
     .mobile-profile-bar {
@@ -1144,6 +1218,19 @@ const Page = styled.div`
     .media-metric svg,
     .media-like svg {
       font-size: 20px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .profile-screen {
+      max-width: 390px;
+      width: min(100vw, 390px);
+    }
+
+    .mobile-profile-bar,
+    .profile-shell {
+      max-width: 390px;
+      width: 100%;
     }
   }
 
@@ -1467,6 +1554,15 @@ export const DevoteeProfilesPage = () => {
     setMessageState((prev) => ({ ...prev, [profileHandle]: true }));
   };
 
+  const goBack = () => {
+    if (window.history.length > 1) {
+      navigate(-1);
+      return;
+    }
+
+    navigate("/");
+  };
+
   if (activeProfile) {
     const isFollowing = Boolean(followState[activeProfile.handle]);
     const followerBase = parseCompactCount(activeProfile.followers);
@@ -1477,6 +1573,15 @@ export const DevoteeProfilesPage = () => {
     return (
       <Page>
         <main className="profile-screen">
+          <button
+            className="desktop-profile-back"
+            onClick={() => navigate("/devotee-profiles")}
+            type="button"
+            aria-label="Back to devotees"
+          >
+            <ArrowBackIosNewRoundedIcon />
+            Back
+          </button>
           <div className="mobile-profile-bar">
             <button
               className="mobile-profile-back"
@@ -1693,7 +1798,7 @@ export const DevoteeProfilesPage = () => {
       <div className="directory-screen">
         <div className="directory-top">
           <div className="page-header">
-            <button className="back-btn" onClick={() => navigate(-1)} type="button" aria-label="Go back">
+            <button className="back-btn" onClick={goBack} type="button" aria-label="Go back">
               <ArrowBackIosNewRoundedIcon />
             </button>
             <span className="page-title">Devotees</span>
@@ -1707,6 +1812,16 @@ export const DevoteeProfilesPage = () => {
               <CloseRoundedIcon />
             </button>
           </div>
+
+          <button
+            className="desktop-directory-back"
+            onClick={goBack}
+            type="button"
+            aria-label="Back"
+          >
+            <ArrowBackIosNewRoundedIcon />
+            Back
+          </button>
 
           <div className="search-wrap">
             <label className="search-box">

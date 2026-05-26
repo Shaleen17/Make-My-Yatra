@@ -12,6 +12,13 @@ const Style = styled.div`
     width: 100%;
   }
 
+  .loginMain.full-page {
+    background:
+      linear-gradient(180deg, rgba(255, 248, 240, 0.96), rgba(250, 247, 242, 1)),
+      #faf7f2;
+    min-height: 100svh;
+  }
+
   .login-wrap {
     background-color: #ffffff;
     border-radius: 12px;
@@ -25,6 +32,10 @@ const Style = styled.div`
     position: relative;
     width: 780px;
     z-index: 2;
+  }
+
+  .loginMain.full-page .login-wrap {
+    box-shadow: 0 18px 60px rgba(44, 24, 16, 0.14);
   }
 
   .login-left {
@@ -273,9 +284,15 @@ const Style = styled.div`
   }
 
   @media (max-width: 720px) {
+    .loginMain {
+      align-items: start;
+      padding: 12px;
+    }
+
     .login-wrap {
       flex-direction: column;
       overflow-y: auto;
+      width: 100%;
     }
 
     .login-left {
@@ -298,6 +315,10 @@ const initialForm = {
 };
 
 const getErrorMessage = (error) => {
+  if (!error.response) {
+    return "Login server is not reachable. Please start the backend on port 2345 and try again.";
+  }
+
   const details = error.response?.data?.details;
   if (Array.isArray(details) && details[0]?.message) {
     return details[0].message;
@@ -305,7 +326,7 @@ const getErrorMessage = (error) => {
   return error.response?.data?.message || "Authentication failed. Please try again.";
 };
 
-export const LoginPanel = ({ handleClick, handleUser }) => {
+export const LoginPanel = ({ handleClick, handleUser, fullPage = false }) => {
   const [mode, setMode] = useState("login");
   const [form, setForm] = useState(initialForm);
   const [loading, setLoading] = useState(false);
@@ -357,7 +378,7 @@ export const LoginPanel = ({ handleClick, handleUser }) => {
 
   return (
     <Style>
-      <div className="loginMain">
+      <div className={`loginMain ${fullPage ? "full-page" : ""}`}>
         <div className="login-wrap">
           <div className="login-left">
             <div className="login-copy">
@@ -367,9 +388,11 @@ export const LoginPanel = ({ handleClick, handleUser }) => {
             </div>
           </div>
           <div className="login-right">
-            <button aria-label="Close login" className="close" onClick={handleClick} type="button">
-              x
-            </button>
+            {handleClick && (
+              <button aria-label="Close login" className="close" onClick={handleClick} type="button">
+                x
+              </button>
+            )}
 
             <p className="eyebrow">Tirth Sutra Account</p>
             <h1>{isSignup ? "Create your account" : "Welcome back"}</h1>

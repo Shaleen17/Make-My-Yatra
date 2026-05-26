@@ -12,6 +12,8 @@ import BookmarkBorderRoundedIcon from "@mui/icons-material/BookmarkBorderRounded
 import MusicNoteRoundedIcon from "@mui/icons-material/MusicNoteRounded";
 import KeyboardArrowUpRoundedIcon from "@mui/icons-material/KeyboardArrowUpRounded";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
+import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
+import { useNavigate } from "react-router-dom";
 import { MobileBottomNav } from "./MobileBottomNav";
 
 const Page = styled.div`
@@ -277,6 +279,10 @@ const Page = styled.div`
     display: none;
   }
 
+  .desktop-back-btn {
+    display: none;
+  }
+
   @media (min-width: 769px) {
     --reel-nav-height: 0px;
     align-items: center;
@@ -285,20 +291,20 @@ const Page = styled.div`
       radial-gradient(circle at 74% 44%, rgba(212, 168, 71, 0.12), transparent 24%),
       linear-gradient(125deg, #2c1810 0%, #160c08 42%, #080403 100%);
     justify-content: center;
-    padding: 26px 0;
+    padding: 22px 0;
 
     .reel-frame {
       border: 1px solid rgba(212, 168, 71, 0.24);
-      border-radius: 34px;
+      border-radius: 28px;
       box-shadow:
-        0 28px 90px rgba(0, 0, 0, 0.58),
-        0 0 0 12px rgba(0, 0, 0, 0.18),
-        0 0 100px rgba(255, 107, 53, 0.12);
-      height: min(92vh, 820px);
-      min-height: 620px;
-      max-width: 460px;
+        0 22px 70px rgba(0, 0, 0, 0.5),
+        0 0 0 8px rgba(0, 0, 0, 0.14),
+        0 0 80px rgba(255, 107, 53, 0.1);
+      height: min(90vh, 760px);
+      min-height: 560px;
+      max-width: 420px;
       overflow: hidden;
-      width: min(32vw, 460px);
+      width: min(30vw, 420px);
     }
 
     .reel-shell {
@@ -307,8 +313,8 @@ const Page = styled.div`
     }
 
     .reel-panel {
-      height: min(92vh, 820px);
-      min-height: 620px;
+      height: min(90vh, 760px);
+      min-height: 560px;
     }
 
     video.reel-video {
@@ -322,13 +328,13 @@ const Page = styled.div`
     }
 
     .reel-progress {
-      left: 24px;
-      right: 24px;
-      top: 26px;
+      left: 20px;
+      right: 20px;
+      top: 22px;
     }
 
     .progress-track {
-      height: 5px;
+      height: 4px;
       background: rgba(255, 255, 255, 0.2);
     }
 
@@ -337,91 +343,92 @@ const Page = styled.div`
     }
 
     .mute-btn {
-      right: 24px;
-      top: 42px;
-      width: 54px;
-      height: 54px;
+      right: 20px;
+      top: 34px;
+      width: 44px;
+      height: 44px;
       background: rgba(0, 0, 0, 0.42);
       border-color: rgba(255, 255, 255, 0.14);
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.32);
     }
 
     .mute-btn svg {
-      font-size: 24px;
+      font-size: 20px;
     }
 
     .center-play {
-      width: 82px;
-      height: 82px;
+      width: 70px;
+      height: 70px;
     }
 
     .center-play svg {
-      font-size: 46px;
+      font-size: 38px;
     }
 
     .reel-actions {
-      bottom: 108px;
-      right: 24px;
-      gap: 18px;
+      bottom: 92px;
+      right: 18px;
+      gap: 13px;
     }
 
     .r-action {
-      font-size: 11px;
+      font-size: 10px;
     }
 
     .r-action .icon-circle {
-      width: 52px;
-      height: 52px;
+      width: 44px;
+      height: 44px;
       background: rgba(0, 0, 0, 0.34);
       border-color: rgba(255, 255, 255, 0.12);
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
     }
 
     .r-action .icon-circle svg {
-      font-size: 24px;
+      font-size: 20px;
     }
 
     .reel-info {
-      bottom: 48px;
-      left: 28px;
-      right: 92px;
+      bottom: 34px;
+      left: 22px;
+      right: 78px;
     }
 
     .creator-row {
-      gap: 14px;
-      margin-bottom: 12px;
+      gap: 10px;
+      margin-bottom: 9px;
     }
 
     .creator-row img {
-      width: 54px;
-      height: 54px;
-      border: 3px solid #fff8f0;
-      box-shadow: 0 0 0 4px rgba(212, 168, 71, 0.28);
+      width: 46px;
+      height: 46px;
+      border: 2px solid #fff8f0;
+      box-shadow: 0 0 0 3px rgba(212, 168, 71, 0.26);
     }
 
     .creator-row .name {
-      font-size: 22px;
+      font-size: 17px;
+      line-height: 1.16;
     }
 
     .creator-row .name svg {
-      font-size: 18px;
+      font-size: 16px;
     }
 
     .reel-caption {
-      font-size: 15px;
-      margin-bottom: 8px;
+      font-size: 14px;
+      margin-bottom: 7px;
     }
 
     .music-row {
-      font-size: 13px;
+      font-size: 12px;
     }
 
     .desktop-rail {
       display: flex;
       flex-direction: column;
-      gap: 26px;
+      gap: 18px;
       position: absolute;
-      right: clamp(48px, 10vw, 180px);
+      right: clamp(36px, 8vw, 140px);
       top: 50%;
       transform: translateY(-50%);
       z-index: 12;
@@ -434,11 +441,11 @@ const Page = styled.div`
       border-radius: 50%;
       color: rgba(255, 248, 240, 0.86);
       display: flex;
-      height: 74px;
+      height: 58px;
       justify-content: center;
-      min-height: 74px;
-      width: 74px;
-      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+      min-height: 58px;
+      width: 58px;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
       transition: transform 0.18s ease, background 0.18s ease, opacity 0.18s ease;
     }
 
@@ -453,7 +460,37 @@ const Page = styled.div`
     }
 
     .desktop-rail svg {
-      font-size: 36px;
+      font-size: 28px;
+    }
+
+    .desktop-back-btn {
+      align-items: center;
+      background: rgba(255, 248, 240, 0.08);
+      border: 1px solid rgba(255, 248, 240, 0.14);
+      border-radius: 999px;
+      color: rgba(255, 248, 240, 0.9);
+      display: inline-flex;
+      font-size: 14px;
+      font-weight: 800;
+      gap: 8px;
+      height: 42px;
+      left: 28px;
+      min-height: 42px;
+      padding: 0 16px;
+      position: fixed;
+      top: 24px;
+      z-index: 20;
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+      transition: background 0.18s ease, transform 0.18s ease;
+    }
+
+    .desktop-back-btn:hover {
+      background: rgba(255, 248, 240, 0.13);
+      transform: translateY(-1px);
+    }
+
+    .desktop-back-btn svg {
+      font-size: 16px;
     }
   }
 `;
@@ -476,6 +513,7 @@ const reels = [
 ];
 
 export const ReelsPage = () => {
+  const navigate = useNavigate();
   const [activeIdx, setActiveIdx] = useState(0);
   const [muted, setMuted] = useState(true);
   const [paused, setPaused] = useState(false);
@@ -575,8 +613,26 @@ export const ReelsPage = () => {
     });
   };
 
+  const goBack = () => {
+    if (window.history.length > 1) {
+      navigate(-1);
+      return;
+    }
+
+    navigate("/");
+  };
+
   return (
     <Page>
+      <button
+        className="desktop-back-btn"
+        onClick={goBack}
+        type="button"
+        aria-label="Go back"
+      >
+        <ArrowBackIosNewRoundedIcon />
+        Back
+      </button>
       <div className="reel-frame">
         <div className="reel-shell" ref={shellRef}>
           {reels.map((reel, idx) => (

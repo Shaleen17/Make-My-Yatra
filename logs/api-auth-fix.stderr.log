@@ -1,0 +1,1 @@
+Remote MongoDB connection failed in development. Falling back to mongodb://127.0.0.1:27017/make-my-yatra.
